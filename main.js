@@ -55,14 +55,36 @@ for(var i=0; i<10; i++){
 // а вместо чисел, кратных пяти — слово «Script». 
 // Если число кратно и 3, и 5, то программа должна выводить слово «JavaScript» 
 
-for(let i = 0; i <= 50; i++)
-if (i % 3 === 0) {
-	console.log('java');
-} else if(i % 5 === 0) {
-	console.log("Script")
-} else if (i % 3 || i % 5 ) {
-	console.log("Java Script");
+// for(let i = 0; i <= 50; i++)
+// if (i % 3 === 0) {
+// 	console.log('java');
+// } else if(i % 5 === 0) {
+// 	console.log("Script")
+// } else if (i % 3 || i % 5 ) {
+// 	console.log("Java Script");
+// };
+
+
+for(let i = 0; i<= 50; i++) {
+	let value = i
+// value = переменной i в цикле for
+	if(i % 3 === 0) {
+		value = "Java"
+	}
+// если i делится на кратное число 3 без остатка то value = "Java" (и тут еще не выводится)
+	if(i % 5 === 0) {
+		// если i делится на кратное число 5 без остатка то value = "Script" (и тут еще не выводится)
+		// идёт проверка typeof value string === number (не ровняется то else, если ровняется то value = script)
+		if(typeof value === "number") {
+			value = "Script"
+		} else (
+			// += это как value = value  + "Script" = Java Script
+			value += "Script"
+		);
+	};
+	console.log(value);
 };
+
 
 
 // TASK 7
@@ -115,6 +137,13 @@ for(let n = 5; n <= 7; n++){
 	console.log(m + " 12 13 ");
 	break;
 };
+
+let startNumber = 5;
+
+for (let i = 0; i < 3; i++) {
+    console.log(startNumber + ' ' + (startNumber + 1) + ' ' + (startNumber + 2));
+    startNumber += 3;
+}
 
 // for(var q = 5; q < 7; q++ ) {
 // 	console.log(q);
